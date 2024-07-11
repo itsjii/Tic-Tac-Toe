@@ -40,19 +40,62 @@ console.log(getTardChoice());
 //Save that choice
 //Return that choice
 
-    var tardScore = 0;
+    var TardScore = 0;
     var ComputerScore = 0;
 
 function playGame () {
-    if (tardScore === 5) {
+    if (TardScore === 5) {
         console.log('You won against bots lmao');
     }
     else if (ComputerScore === 5) {
         console.log('Lost to PvE pepelaugh');
     }
     else {
-        var computerValue = getComputerChoice();
-        var tardValue = getTardChoice();
-        playRound(tardValue, computerValue);
+        var ComputerValue = getComputerChoice();
+        var TardValue = getTardChoice();
+        playRound(TardValue, ComputerValue);
+    }
+
+
+//Tracks first to 5 points
+
+function playRound(TardChoice, ComputerChoice) {
+    if (TardChoice === 'Rock' && ComputerChoice === 'Scissor') {
+        TardScore++;
+        console.log('You get a point!');
+        console.log('Tard ' + TardScore);
+        console.log('Computer ' + ComputerScore);
+        playGame();
+    }
+    else if (TardChoice === 'Paper' && ComputerChoice === 'Rock') {
+        TardScore++;
+        console.log('You get a point!');
+        console.log('Tard ' + TardScore);
+        console.log('Computer ' + ComputerScore);
+        playGame();
+    }
+    else if (TardChoice === 'Scissor' && ComputerChoice === 'Paper') {
+        TardScore++;
+        console.log('You get a point!');
+        console.log('Tard ' + TardScore);
+        console.log('Computer ' + ComputerScore);
+        playGame();
+    }
+    else if (TardChoice === ComputerChoice) {
+        console.log('Tie!');
+        console.log('Tard ' + TardScore);
+        console.log('Computer ' + ComputerScore);
+        playGame();
+    }
+    else {
+        ComputerScore++;
+        console.log('Computer gets a point!');
+        console.log('Tard ' + TardScore);
+        console.log('Computer ' + ComputerScore);
+        playGame();
     }
 }
+}
+playGame();
+
+//im too lazy to comment this
