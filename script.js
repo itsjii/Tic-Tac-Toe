@@ -43,3 +43,16 @@ console.log(getTardChoice());
     var tardScore = 0;
     var ComputerScore = 0;
 
+function playGame () {
+    if (tardScore === 5) {
+        console.log('You won against bots lmao');
+    }
+    else if (ComputerScore === 5) {
+        console.log('Lost to PvE pepelaugh');
+    }
+    else {
+        var computerValue = getComputerChoice();
+        var tardValue = getTardChoice();
+        playRound(tardValue, computerValue);
+    }
+}
